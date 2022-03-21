@@ -26,6 +26,6 @@ class MlSpider(scrapy.Spider):
                 links.append(item.xpath('./a/@href').get())
 
 
-            df_content = {'OLD_PRICES': old_prices, 'PRICES': prices, 'TITLE': titles, 'IMAGE': images, 'LINK': links}
+            df_content = {'OLD_PRICE': old_prices, 'PRICE': prices, 'TITLE': titles, 'IMAGE': images, 'LINK': links}
             df = pd.DataFrame(data=df_content)
             df.to_csv(f'dataset/result_{i}_ml.csv')
